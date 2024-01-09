@@ -9,7 +9,7 @@ void scalar_multiplication(t8_vector_c *vector, const double scalar){
 
     t8_vector *vec = static_cast<t8_vector *> (vector->t8_vector);
     
-    scalar_multiplication_cpp(*vec, scalar);
+    scalar_multiplication(*vec, scalar);
     return;
 }
 

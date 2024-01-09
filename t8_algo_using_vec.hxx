@@ -4,6 +4,6 @@
 #include "t8_vector.hxx"
 
 
-void scalar_multiplication_cpp(t8_vector &vector, const double scalar);
+void scalar_multiplication(t8_vector &vector, const double scalar);
 
 #endif
