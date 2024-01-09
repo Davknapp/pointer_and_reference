@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-void scalar_multiplication(t8_vector_c *vec, const double scalar);
+void scalar_multiplication(t8_vector_double *vec, const double scalar);
 
 #ifdef __cplusplus
 }

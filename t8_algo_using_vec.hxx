@@ -3,7 +3,7 @@
 
 #include "t8_vector.hxx"
 
-
-void scalar_multiplication(t8_vector &vector, const double scalar);
+template<typename T>
+void scalar_multiplication(t8_vector<T> &vector, const double scalar);
 
 #endif

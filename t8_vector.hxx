@@ -3,12 +3,13 @@
 
 #include<vector>
 #include<algorithm>
-#include<stdio.h>
+#include<iostream>
 
+template<class T>
 class t8_vector
 {
     public:
-        t8_vector(double *array, const int array_size):vector(array, array + array_size){
+        t8_vector(T *array, const int array_size):vector(array, array + array_size){
 
         };
 
@@ -18,16 +19,16 @@ class t8_vector
             counter = other.counter; 
         };
 
-        void set_elem(const int index, const double element){
+        void set_elem(const int index, const T element){
             vector[index] = element;
             counter++;
         };
 
         void print(){
-            std::for_each(vector.begin(), vector.end(), [](double elem){printf("%f\n", elem);});
+            std::for_each(vector.begin(), vector.end(), [](T elem){std::cout<<elem <<std::endl;});
         };
 
-        std::vector<double>      vector;
+        std::vector<T>      vector;
         int                 counter = 0;
 };
 

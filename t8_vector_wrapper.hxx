@@ -7,15 +7,15 @@ extern "C" {
 
 typedef struct t8_vector_wrapper{
     void *t8_vector;
-}t8_vector_c;
+}t8_vector_double;
 
-t8_vector_c *t8_vector_c_create(double *array, const int size);
+t8_vector_double *t8_vector_double_create(double *array, const int size);
 
-void t8_vector_c_destroy(t8_vector_c *vector);
+void t8_vector_double_destroy(t8_vector_double *vector);
 
-void t8_vector_c_set_elem(t8_vector_c *vector, const int index, const double element);
+void t8_vector_double_set_elem(t8_vector_double *vector, const int index, const double element);
 
-void t8_vector_c_print(t8_vector_c *vector);
+void t8_vector_double_print(t8_vector_double *vector);
 
 #ifdef __cplusplus
 }

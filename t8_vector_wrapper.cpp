@@ -2,38 +2,38 @@
 #include "t8_vector.hxx"
 #include <stdlib.h>
 
-t8_vector_c *t8_vector_c_create(double *array, const int size){
-    t8_vector_c *wrapped_vector= (t8_vector_c *) malloc(sizeof(t8_vector_c *));
-    t8_vector *vec = new t8_vector(array, size);
+t8_vector_double *t8_vector_double_create(double *array, const int size){
+    t8_vector_double *wrapped_vector= (t8_vector_double *) malloc(sizeof(t8_vector_double *));
+    t8_vector<double> *vec = new t8_vector<double>(array, size);
     wrapped_vector->t8_vector = vec;
 
     return wrapped_vector;
 }
 
-void t8_vector_c_destroy(t8_vector_c *vector){
+void t8_vector_double_destroy(t8_vector_double *vector){
     if (vector == NULL){
         return;
     }
-    delete static_cast<t8_vector *>(vector->t8_vector);
+    delete static_cast<t8_vector<double> *>(vector->t8_vector);
     free(vector);
     return;
 }
-void t8_vector_c_set_elem(t8_vector_c *vector, const int index, const double element){
+void t8_vector_double_set_elem(t8_vector_double *vector, const int index, const double element){
     if(vector == NULL){
         return;
     }
     
-    t8_vector *vec = static_cast<t8_vector *> (vector->t8_vector);
+    t8_vector<double> *vec = static_cast<t8_vector<double> *> (vector->t8_vector);
     vec->set_elem(index, element);
     return;
 }
 
-void t8_vector_c_print(t8_vector_c *vector){
+void t8_vector_double_print(t8_vector_double *vector){
     if(vector == NULL){
         return;
     }
     
-    t8_vector *vec = static_cast<t8_vector *> (vector->t8_vector);
+    t8_vector<double> *vec = static_cast<t8_vector<double> *> (vector->t8_vector);
     vec->print();
     return;  
 }
